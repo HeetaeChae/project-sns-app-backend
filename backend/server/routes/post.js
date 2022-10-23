@@ -4,6 +4,13 @@ const router = express.Router();
 
 const { Post } = require("../models/Post");
 
+router.get("/getRealPost", (req, res) => {
+  Post.find({}).exec((err, doc) => {
+    if (err) return res.status(400).json({ success: false, err });
+    return res.status(200).json({ success: true, doc });
+  });
+});
+
 router.post("/addPost", (req, res) => {
   const post = new Post(req.body);
   post.save((err, post) => {

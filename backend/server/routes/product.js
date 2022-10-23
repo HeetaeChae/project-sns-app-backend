@@ -9,4 +9,12 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/getProduct", async (req, res) => {
+  try {
+    return res.status(200).json({ product: "mu" });
+  } catch (err) {
+    return res.status(500).send("server error");
+  }
+});
+
 module.exports = router;

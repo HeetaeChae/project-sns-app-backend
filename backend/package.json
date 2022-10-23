@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node ./server/app.js"
   },
+  "keywords": [],
   "author": "ChaeHeetae",
   "license": "ISC",
   "dependencies": {

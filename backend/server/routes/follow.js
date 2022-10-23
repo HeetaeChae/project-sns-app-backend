@@ -1,7 +1,7 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
 
-import { Follow } from "../models/Follow";
+const { Follow } = require("../models/Follow");
 
 router.get("/", (req, res) => {
   Follow.find({}).exec((err, doc) => {

@@ -1,7 +1,7 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
 
-import { Like } from "../models/Like";
+const { Like } = require("../models/Like");
 
 router.get("/", (req, res) => {
   Like.find({}).exec((err, doc) => {

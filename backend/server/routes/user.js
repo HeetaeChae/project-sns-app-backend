@@ -1,7 +1,7 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
 
-import { User } from "../models/User";
+const { User } = require("../models/User");
 
 router.get("/", (req, res) => {
   User.find({}).exec((err, doc) => {
@@ -79,13 +79,6 @@ router.get("/logout", (req, res) => {
   User.findOne({ token }, (err, doc) => {
     if (err) return res.json({ success: false, err });
     return res.clearCookie("token").status(200).send({ success: true, doc });
-  });
-});
-
-router.get("/auth", auth, (req, res) => {
-  res.status(200).json({
-    user: req.user,
-    isAuth: true,
   });
 });
 

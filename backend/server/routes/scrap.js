@@ -1,7 +1,7 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
 
-import { Scrap } from "../models/Scrap";
+const { Scrap } = require("../models/Scrap");
 
 router.get("/", (req, res) => {
   Scrap.find({}).exec((err, doc) => {

@@ -1,7 +1,7 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
 
-import { Comment } from "../models/Comment";
+const { Comment } = require("../models/Comment");
 
 router.get("/", (req, res) => {
   Comment.find({}).exec((err, doc) => {

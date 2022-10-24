@@ -31,6 +31,19 @@ app.use(
   })
 );
 app.use("/", express.static("./public"));
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: "sessionss",
+    cookie: {
+      maxAge: 1000 * 60 * 60,
+      sameSite: "none",
+      httpOnly: false,
+      secure: true,
+    },
+  })
+);
 
 app.use("/api/user", user);
 app.use("/api/post", post);

@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://project-sns-app-frontend-35sx1dc36-heetaechae.vercel.app/",
+    origin: "https://project-sns-app-frontend-35sx1dc36-heetaechae.vercel.app",
     credentials: true,
   })
 );
